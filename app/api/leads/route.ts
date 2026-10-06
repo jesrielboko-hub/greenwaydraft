@@ -1,27 +1,23 @@
 import { NextResponse } from 'next/server';
+import { clean, saveLead } from '../../../lib/leads';
 
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const data = clean(await request.json());
+    const name = [data.firstName, data.lastName].filter(Boolean).join(' ') || data.name || '';
 
-    const name = String(body?.name ?? '').trim();
-    const email = String(body?.email ?? '').trim();
-
-    if (!name || !email) {
+    if (!name || !data.email) {
       return NextResponse.json(
         { ok: false, error: 'Name and email are required.' },
         { status: 400 }
       );
     }
 
-    console.log('[GREENWAY FIELD ASSESSMENT LEAD]', {
-      ...body,
-      name,
-      email,
-      submittedAt: new Date().toISOString(),
-    });
+    const lead = saveLead('assessment', data);
+    console.log('[GREENWAY FIELD ASSESSMENT LEAD]', lead.id, name, data.email);
 
     return NextResponse.json({ ok: true }, { status: 201 });
   } catch (error) {
