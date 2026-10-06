@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+*.tsbuildinfo
+
+# Local datastore (content, leads, analytics written at runtime)
+data/
+
+# Environment variables
+.env*
+
+# Local tooling
+.claude/
+.DS_Store
+npm-debug.log*
