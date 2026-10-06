@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, Linkedin } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,7 +11,9 @@ const stats: [string, string][] = [
   ['1,000+', 'Acres maintained weekly'],
 ];
 
-const leadership = [
+const LINKEDIN_URL = 'https://www.linkedin.com/company/greenway-athletic-field-services/';
+
+const leadership: { role: string; name: string; bio: string; photo?: string }[] = [
   {
     role: 'CHAIRMAN OF THE BOARD',
     name: 'Charles W.B. Wardell III',
@@ -20,6 +22,7 @@ const leadership = [
   {
     role: 'PRESIDENT & CEO',
     name: 'Rocco Lagana',
+    photo: '/assets/leadership/rocco-lagana.jpg',
     bio: "As a founding member of Greenway Property Services, Rocco Lagana serves as President and CEO. The current Greenway site describes more than 50 years of landscape-industry experience across operations, sales and marketing, with his current focus on the growth of Greenway Athletic Field Services.",
   },
   {
@@ -82,21 +85,38 @@ export default function About() {
               <div className="eyebrow">LEADERSHIP</div>
               <h2 className="display">THE PEOPLE BEHIND THE WORK.</h2>
             </div>
-            <p>
-              Leadership bios below are based on the current Greenway website and can
-              be updated from the admin portal.
-            </p>
           </div>
 
           <div className="leadership-grid">
             {leadership.map((person) => (
               <article className="leader-card" key={person.name}>
+                <div className="leader-photo">
+                  {person.photo ? (
+                    <Image
+                      src={person.photo}
+                      alt={`${person.name}, ${person.role.toLowerCase()}`}
+                      fill
+                      sizes="(max-width: 900px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <div className="placeholder">[ADD PHOTO]</div>
+                  )}
+                </div>
                 <div className="eyebrow">{person.role}</div>
                 <h3 className="display">{person.name}</h3>
                 <p>{person.bio}</p>
               </article>
             ))}
           </div>
+
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary leader-linkedin"
+          >
+            <Linkedin size={16} /> FOLLOW GREENWAY ON LINKEDIN
+          </a>
         </div>
       </section>
 
