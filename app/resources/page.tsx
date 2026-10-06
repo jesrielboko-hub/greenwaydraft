@@ -85,10 +85,10 @@ export default function Resources() {
 
           <div className="guide-card">
             <Image
-              src="/assets/built-beneath-cover.jpg"
+              src="/assets/built-beneath-front-cover.jpg"
               alt="Built Beneath the Surface by Rocco Lagana"
-              width={900}
-              height={700}
+              width={744}
+              height={1024}
             />
 
             <div className="guide-form">

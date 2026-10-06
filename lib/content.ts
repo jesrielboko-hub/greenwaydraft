@@ -39,8 +39,13 @@ const fallback:SiteContent = {
     {role:'PRESIDENT & CEO',name:'Rocco Lagana',bio:"As a founding member of Greenway Property Services, Rocco Lagana serves as President and CEO. The current Greenway site describes more than 50 years of landscape-industry experience across operations, sales and marketing, with his current focus on the growth of Greenway Athletic Field Services."},
     {role:'CHIEF OPERATING OFFICER',name:'Rocky Lagana',bio:"Rocky has been with Greenway Property Services since its inception. The current Greenway site describes more than 15 years of landscape-industry experience and a background spanning operations, bidding, customer service, sales and acquisitions."}
   ],
-  resource:{title:'Built Beneath the Surface',description:'The hidden decisions that determine how athletic fields perform. Request the guide to learn about drainage, construction decisions, soil, grading, materials and long-term maintenance.',cover:'/assets/built-beneath-cover.jpg'},
-  testimonials:[],
+  resource:{title:'Built Beneath the Surface',description:'The hidden decisions that determine how athletic fields perform. Request the guide to learn about drainage, construction decisions, soil, grading, materials and long-term maintenance.',cover:'/assets/built-beneath-front-cover.jpg'},
+  // PLACEHOLDER testimonials: made up for layout purposes. Replace with real client quotes via /admin before launch.
+  testimonials:[
+    {id:'placeholder-1',name:'Jordan Mitchell',organization:'Town Parks & Recreation Department',role:'Director of Parks & Recreation',quote:'Greenway rebuilt our main baseball infield on a tight off-season schedule. Drainage is dramatically better, and we lost far fewer game days this spring than in years past.',featured:true},
+    {id:'placeholder-2',name:'Alex Romano',organization:'Regional High School',role:'Athletic Director',quote:'From the first site walk to final sod, the crew understood how an athletic field actually gets used. Our coaches noticed the difference in the playing surface immediately.',featured:true},
+    {id:'placeholder-3',name:'Taylor Brennan',organization:'Youth Little League',role:'League President',quote:'They took the time to explain what was happening beneath the surface and why it mattered. Our fields have never been in better shape for opening day.',featured:true}
+  ],
   partnersImage:'/assets/industry-partners.png'
 };
 
