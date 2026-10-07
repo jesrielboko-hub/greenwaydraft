@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Check, Linkedin } from 'lucide-react';
+import PartnerLogos from '../../components/PartnerLogos';
 
 export const dynamic = 'force-dynamic';
 
@@ -133,14 +134,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="partner-panel">
-            <Image
-              src="/assets/industry-partners.png"
-              alt="Greenway industry partners and associations"
-              width={2000}
-              height={650}
-            />
-          </div>
+          <PartnerLogos />
         </div>
       </section>
 
