@@ -112,3 +112,46 @@
 #resources .resource-cover{box-shadow:0 20px 50px rgba(0,0,0,.35)}
 @media(max-width:640px){.partners-strip .partner-logos{gap:20px 26px}.partners-strip .partner-logos li{height:46px}.partners-strip .partner-logos img{max-height:40px;max-width:120px}}
 .cta .btn{white-space:nowrap;flex:0 0 auto}
+
+/* ---- Book placement preview variants (?book=a|b|c) ---- */
+#get-the-guide{scroll-margin-top:100px}
+.book-focus:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.btn-guide{background:var(--green);color:white}
+.btn-guide:hover{background:#083d25;transform:translateY(-1px)}
+.btn-guide-ghost{background:transparent;color:var(--green);border-color:#b7cabd;padding:11px 14px;font-size:12px}
+.btn-guide-ghost:hover{border-color:var(--green);background:#eef4f0}
+/* A: homepage band */
+.book-band{background:#eaf2ec;border-top:1px solid #d6e4da;border-bottom:1px solid #d6e4da;padding:44px 0}
+.book-band-inner{display:grid;grid-template-columns:auto 1fr auto;gap:36px;align-items:center}
+.book-band-cover{width:132px;border-radius:8px;overflow:hidden;box-shadow:0 14px 34px rgba(16,43,31,.22);transform:rotate(-3deg)}
+.book-band-cover img{display:block;width:100%;height:auto}
+.book-band h2{font-size:clamp(26px,3vw,38px);margin:8px 0 10px}
+.book-band p{margin:0;max-width:560px;line-height:1.65;color:var(--muted)}
+/* B: floating button */
+.book-fab{position:fixed;right:20px;bottom:20px;z-index:55;display:flex;align-items:center;gap:6px;animation:book-fab-in .35s ease both}
+.book-fab-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:white;color:var(--green);border:2px solid var(--green);font-size:12px;font-weight:800;letter-spacing:.06em;box-shadow:0 10px 28px rgba(0,0,0,.28)}
+.book-fab-link svg{color:var(--orange)}
+.book-fab-link:hover{background:var(--green);color:white}
+.book-fab-link:hover svg{color:white}
+.book-fab-close{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:white;color:var(--slate);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 18px rgba(16,43,31,.18)}
+.book-fab-close:hover{background:var(--gray)}
+@keyframes book-fab-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.book-fab{animation:none}}
+/* C: header link */
+.nav-guide{white-space:nowrap}
+.mobile-menu .btn-guide-ghost{justify-content:center;font-size:13px;padding:13px 14px}
+.nav-guide{gap:7px;padding:10px 12px;flex:0 0 auto}
+@media(min-width:1220px){.nav:has(.nav-guide){gap:16px}.nav:has(.nav-guide) .navlinks{gap:16px}.nav:has(.nav-guide) .navlinks a{white-space:nowrap}}
+@media(max-width:1219px){.nav:has(.nav-guide){gap:14px}.nav:has(.nav-guide) .navlinks{gap:14px}.nav-guide{width:42px;height:42px;padding:0;justify-content:center}.nav-guide-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+@media(max-width:980px){
+  .nav-guide{display:none}
+  .book-fab{right:12px;bottom:calc(84px + env(safe-area-inset-bottom))}
+  .book-band-inner{grid-template-columns:auto 1fr;gap:24px}
+  .book-band-inner .btn-guide{grid-column:1/-1;justify-self:start}
+}
+@media(max-width:640px){
+  .book-band{padding:36px 0}
+  .book-band-inner{grid-template-columns:1fr}
+  .book-band-cover{width:110px}
+  .book-band-inner .btn-guide{width:100%;justify-content:center}
+}

@@ -83,7 +83,7 @@ export default function Resources() {
             </ul>
           </div>
 
-          <div className="guide-card">
+          <div className="guide-card" id="get-the-guide">
             <Image
               src="/assets/built-beneath-front-cover.jpg"
               alt="Built Beneath the Surface by Rocco Lagana"
